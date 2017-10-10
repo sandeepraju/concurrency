@@ -3,7 +3,7 @@ var http = require("http");
 
 console.log("Before the request");
 
-http.get("http://httpbin.org/delay/1", function(res) {
+http.get("http://localhost:8000/", function(res) {
   // request was complete
   // console.log("response code:", res.statusCode);
   console.log("On request complete");

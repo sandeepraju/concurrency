@@ -24,7 +24,7 @@ func hammer() {
 
 func iotask() string {
 	// Make a get request
-	rs, err := http.Get("http://httpbin.org/delay/4")
+	rs, err := http.Get("http://localhost:8000/")
 	defer rs.Body.Close()
 
 	// Process response

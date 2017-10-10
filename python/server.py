@@ -17,7 +17,7 @@ def countdown(n, name = "default"):
 
 def iotask(name = "default"):
     start = time.time()
-    response = urllib.request.urlopen('http://httpbin.org/delay/5')
+    response = urllib.request.urlopen('http://localhost:8000/')
     text = response.read()
     end = time.time()
     print ('[{}] exec time = {}'.format(name, (end - start)))
