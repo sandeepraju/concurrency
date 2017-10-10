@@ -19,4 +19,4 @@ while True:
     data = s.recv(BUFFER_SIZE)
     s.close()
     end = time.time()
-    print('conn = {0:.4f}, resp = {0:.4f}, total = {0:.4f}'.format((conn - start), (end - conn), (end - start)))
+    print('conn = {}\tresp = {}\ttotal = {}'.format((conn - start), (end - conn), (end - start)))
