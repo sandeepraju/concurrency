@@ -32,7 +32,7 @@ pip3 install ipython ipdb
 # Install go
 brew install go
 echo 'export PATH=$PATH:$HOME/.linuxbrew/opt/go/libexec/bin' >>  ~/.profile
-echo 'export GOPATH=/host' >> ~/.profile
+echo 'export GOPATH=/repo' >> ~/.profile
 source ~/.profile
 
 # Install jdk
