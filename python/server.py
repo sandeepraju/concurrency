@@ -1,4 +1,5 @@
 import time
+import urllib.request
 from socket import *
 from threading import Thread
 from concurrent.futures import ThreadPoolExecutor as Pool
@@ -12,6 +13,15 @@ def countdown(n, name = "default"):
         n -= 1
     end = time.time()
     print ('[{}] exec time = {}'.format(name, (end - start)))
+    return n
+
+def iotask(name = "default"):
+    start = time.time()
+    response = urllib.request.urlopen('http://httpbin.org/delay/5')
+    text = response.read()
+    end = time.time()
+    print ('[{}] exec time = {}'.format(name, (end - start)))
+    return text
 
 COUNT = 50000000
 
@@ -36,11 +46,12 @@ def request_handler(client):
             break
 
         # submit to the pool
-        future = pool.submit(countdown, COUNT, "Pool")
-        result = future.result()
+        # future = pool.submit(countdown, COUNT, "Pool")
+        # result = future.result()
 
         # process it in the handler thread
-        # result = countdown(COUNT, "Default")
+        result = countdown(COUNT, "Default")
+        # result = iotask("Default")
 
         resp = str(result).encode('ascii') + b'\n'
         client.send(resp)
