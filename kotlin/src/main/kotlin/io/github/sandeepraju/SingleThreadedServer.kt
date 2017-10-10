@@ -34,7 +34,7 @@ class SingleThreadedServer : Server {
 
                     val response = handler(data)
 
-                    output.writeBytes(response)
+                    output.writeBytes("OK")
                 }
             }
         }

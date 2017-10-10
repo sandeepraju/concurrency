@@ -9,7 +9,7 @@ class Database {
     companion object {
         fun query(query: String): String {
             HttpClients.createDefault().use { client ->
-                val httpGet = HttpGet("http://httpbin.org/delay/1")
+                val httpGet = HttpGet("http://localhost:8000/")
                 client.execute(httpGet).use { response ->
                     // log the response
                     println(response.statusLine)
